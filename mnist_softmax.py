@@ -1,24 +1,6 @@
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
-# Initialize
-def weight_variable(shape):
-    initial = tf.truncated_normal(shape, stddev=0.1)
-    return tf.Variable(initial)
-
-# Initialize
-def bias_variable(shape):
-    initial = tf.constant(0.1, shape)
-    return tf.Variable(initial)
-
-# Convolution
-def conv2d(x, W):
-    return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
-
-# Pooling 2x2
-def max_pool_2x2(x):
-    return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
-
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 # None means dimension of any length.
